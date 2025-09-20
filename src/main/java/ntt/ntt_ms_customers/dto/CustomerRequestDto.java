@@ -1,13 +1,15 @@
-package ntt.ntt_ms_customers.entity;
+package ntt.ntt_ms_customers.dto;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import lombok.*;
-import lombok.experimental.SuperBuilder;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import ntt.ntt_ms_customers.enums.CustomerSubType;
 import ntt.ntt_ms_customers.enums.CustomerType;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.validation.constraints.NotNull;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
@@ -16,18 +18,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
         visible = true
 )
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = PersonalCustomer.class, name = "PERSONAL"),
-        @JsonSubTypes.Type(value = BusinessCustomer.class, name = "BUSINESS")
+        @JsonSubTypes.Type(value = PersonalCustomerRequestDto.class, name = "PERSONAL"),
+        @JsonSubTypes.Type(value = BusinessCustomerRequestDto.class, name = "BUSINESS")
 })
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
-@Document(collection = "customers")
-public class Customer {
-    @Id
-    private String id;
+public class CustomerRequestDto {
+    @NotNull
     private CustomerType type;
     private CustomerSubType subType;
     private String email;

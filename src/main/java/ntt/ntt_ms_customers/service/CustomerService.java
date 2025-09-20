@@ -1,12 +1,14 @@
 package ntt.ntt_ms_customers.service;
 
-import ntt.ntt_ms_customers.dto.CustomerDto;
+import ntt.ntt_ms_customers.dto.CustomerResponseDto;
+import ntt.ntt_ms_customers.dto.CustomerRequestDto;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface CustomerService {
 
-    public Flux<CustomerDto> findAllCustomers();
-
-    /*public Mono<Customer> saveCustomer(Customer customer);*/
+    Flux<CustomerResponseDto> findAllCustomers();
+    Mono<CustomerResponseDto> findCustomerById(String id);
+    Mono<CustomerResponseDto> saveCustomer(CustomerRequestDto customer);
 
 }

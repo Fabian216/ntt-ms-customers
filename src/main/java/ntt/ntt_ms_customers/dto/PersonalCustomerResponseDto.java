@@ -1,13 +1,15 @@
 package ntt.ntt_ms_customers.dto;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-@Data
-@EqualsAndHashCode(callSuper = true)
+@Getter
+@Setter
 @SuperBuilder
-public class PersonalCustomerResponseDto extends CustomerDto{
+@EqualsAndHashCode(callSuper = true)
+public class PersonalCustomerResponseDto extends CustomerResponseDto {
     private String firstName;
     private String lastName;
     private String documentType;

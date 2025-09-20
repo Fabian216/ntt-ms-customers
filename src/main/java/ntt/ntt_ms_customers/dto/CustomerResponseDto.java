@@ -2,9 +2,7 @@ package ntt.ntt_ms_customers.dto;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import ntt.ntt_ms_customers.enums.CustomerSubType;
 import ntt.ntt_ms_customers.enums.CustomerType;
@@ -21,11 +19,12 @@ import javax.validation.constraints.NotBlank;
         @JsonSubTypes.Type(value = PersonalCustomerResponseDto.class, name = "PERSONAL"),
         @JsonSubTypes.Type(value = BusinessCustomerResponseDto.class, name = "BUSINESS")
 })
-@Data
+@Getter
+@Setter
 @SuperBuilder
-@NoArgsConstructor
-@AllArgsConstructor
-public class CustomerDto {
+//@NoArgsConstructor
+//@AllArgsConstructor
+public class CustomerResponseDto {
     private String id;
     @NotBlank
     private CustomerType type;

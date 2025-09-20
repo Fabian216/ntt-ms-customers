@@ -1,19 +1,17 @@
 package ntt.ntt_ms_customers.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import ntt.ntt_ms_customers.entity.AuthorizedSigner;
 import ntt.ntt_ms_customers.entity.Headlines;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
-public class BusinessCustomerResponseDto extends CustomerDto{
+public class BusinessCustomerResponseDto extends CustomerResponseDto {
     private String companyName;
     private String ruc;
     private List<Headlines> headlines;
