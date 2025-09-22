@@ -6,7 +6,6 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
 public class PersonalCustomer extends Customer{

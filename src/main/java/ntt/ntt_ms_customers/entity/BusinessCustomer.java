@@ -9,7 +9,6 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 public class BusinessCustomer extends Customer{

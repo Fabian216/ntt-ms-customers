@@ -1,10 +1,9 @@
 package ntt.ntt_ms_customers.entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class AuthorizedSigner extends BaseEntity{

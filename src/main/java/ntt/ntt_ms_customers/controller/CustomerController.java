@@ -30,17 +30,4 @@ public class CustomerController {
         return customerService.saveCustomer(requestDto);
     }
 
-    /*
-    @PutMapping("/{id}")
-    public Mono<CustomerDto> update(@PathVariable String id, @Valid @RequestBody CustomerDto dto) {
-        dto.setId(id);
-        return service.save(CustomerMapper.toEntity(dto))
-                .map(CustomerMapper::toDto);
-    }
-
-    @DeleteMapping("/{id}")
-    public Mono<Void> delete(@PathVariable String id) {
-        return service.deleteById(id);
-    }*/
-
 }

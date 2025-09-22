@@ -6,10 +6,11 @@ import ntt.ntt_ms_customers.dto.PersonalCustomerResponseDto;
 import ntt.ntt_ms_customers.entity.BusinessCustomer;
 import ntt.ntt_ms_customers.entity.Customer;
 import ntt.ntt_ms_customers.entity.PersonalCustomer;
+import ntt.ntt_ms_customers.exception.UnsupportedCustomerTypeException;
 
 public class ListCustomerMapper {
 
-    public static CustomerResponseDto listCustomers(Customer customer) {
+    public static CustomerResponseDto toResponseDto(Customer customer) {
         switch (customer.getType()) {
             case PERSONAL:
                 PersonalCustomer p = (PersonalCustomer) customer;
@@ -41,7 +42,7 @@ public class ListCustomerMapper {
                         .authorizedSigners(b.getAuthorizedSigners())
                         .build();
             default:
-                throw new IllegalArgumentException("Tipo de cliente no soportado: " + customer.getType());
+                throw new UnsupportedCustomerTypeException("Tipo de cliente no soportado: " + customer.getType());
         }
     }
 

@@ -25,20 +25,4 @@ public class PersonalCustomerController {
         return personalService.findPersonalCustomerById(id);
     }
 
-    @PostMapping
-    public Mono<PersonalCustomerResponseDto> createPersonalCustomer(@RequestBody
-                                                                  PersonalCustomerRequestDto request) {
-        return personalService.savePersonalCustomer(request);
-    }
-
-    @PutMapping("/{id}")
-    public Mono<PersonalCustomerResponseDto> updatePersonalCustomer(@PathVariable String id, @RequestBody PersonalCustomerRequestDto reques) {
-        return personalService.updatePersonalCustomer(id, reques);
-    }
-
-    @DeleteMapping("/{id}")
-    public Mono<Void> deletePersonalCustomer(@PathVariable String id) {
-        return personalService.deletePersonalCustomer(id);
-    }
-
 }

@@ -21,9 +21,8 @@ import javax.validation.constraints.NotBlank;
 })
 @Getter
 @Setter
+@NoArgsConstructor
 @SuperBuilder
-//@NoArgsConstructor
-//@AllArgsConstructor
 public class CustomerResponseDto {
     private String id;
     @NotBlank
